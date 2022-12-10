@@ -94,5 +94,21 @@ namespace BakeryOrder.Tests
       Assert.AreEqual(1, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string title01 = "Rick's Coffee and Beer";
+      string title02 = "Morty's Snack Shack";
+      Order newOrder1 = new Order(title01, "test descript", 20, "test date");
+      Order newOrder2 = new Order(title02, "test descript2", 30, "test date2");
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result);
+    }
+
   }
 }
