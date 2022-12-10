@@ -20,9 +20,26 @@ namespace BakeryOrder.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       //Arrange
-      string title = "Rick Cafe and Taproom";
+      string title = "Rick's Cafe and Taproom";
       Order newOrder = new Order(title, "bread and pastry", 20, "12/10/2022");
+      //Act
+      //Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnDesctription_Srting()
+    {
+      //Arrange
+      string title = "Rick's Cafe and Taproom";
+      string description = "baguettes and croissants";
+      Order newOrder = new Order(title, description, 20, "12/10/2022");
+      
+      //Act
+      string result = newOrder.Description;
+      
+      //Assert
+      Assert.AreEqual(description, result);
     }
 
   }
