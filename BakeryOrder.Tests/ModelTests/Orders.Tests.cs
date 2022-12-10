@@ -77,5 +77,22 @@ namespace BakeryOrder.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string title = "Rick's Cafe and Taproom";
+      string description = "baguettes and croissants";
+      int price = 20;
+      string date = "12/10/2022";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      int result = newOrder.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
+
   }
 }
