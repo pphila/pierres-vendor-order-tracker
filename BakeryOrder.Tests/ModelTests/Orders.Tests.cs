@@ -6,8 +6,13 @@ using System;
 namespace BakeryOrder.Tests
 {
   [TestClass]
-  public class OrdersTests
+  public class OrdersTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
