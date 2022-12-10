@@ -60,5 +60,22 @@ namespace BakeryOrder.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      //Arrange
+      string title01 = "Rick's Coffee and Beer";
+      string title02 = "Morty's Snack Shack";
+      Order newOrder1 = new Order(title01, "test descript", 20, "test date");
+      Order newOrder2 = new Order(title02, "test descript2", 30, "test date2");
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      //Arrange
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
