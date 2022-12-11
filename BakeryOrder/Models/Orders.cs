@@ -7,15 +7,19 @@ namespace BakeryOrder.Models
   {
     public string Title { get; set; }
     public string Description { get; set; }
+    public int Bread { get; set; }
+    public int Pastry { get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> {};
 
-    public Order(string title, string description, int price, string date)
+    public Order(string title, string description, int bread, int pastry, int price, string date)
     {
       Title = title;
       Description = description;
+      Bread = bread;
+      Pastry = pastry;
       Price = price;
       Date = date;
       _instances.Add(this);
