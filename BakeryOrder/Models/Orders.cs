@@ -40,6 +40,14 @@ namespace BakeryOrder.Models
     {
       return _instances[searchId-1];
     }
+
+    public void CalculatePrice()
+    {
+      int breadCost = (Bread *5) - ((int)Math.Floor((decimal)(Bread / 3) * 5));
+      int pastryRemainder = Pastry % 3;
+      int pastryTotal = (((Pastry - pastryRemainder) / 3) * 5) + (pastryRemainder * 2);
+      Price = breadCost + pastryTotal;
+    }
     
   }
 }
