@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+<div class="container">
+  @using BakeryOrder.Models;
+
+  <h1>Vendors</h1>
+
+  @if (@Model.Count == 0)
+  {
+    <h2>No vendor orders have been placed yet :P</h2>
+  }
+
+  @foreach (Vendor vendor in Model)
+  {
+    <h3><a href="/vendors/@vendor.Id">@vendor.Name</a></h3>
+  }
+
+  <p><a href="/">Back to Home</a></p>
+</div>
