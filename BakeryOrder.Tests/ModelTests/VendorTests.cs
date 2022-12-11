@@ -44,5 +44,19 @@ namespace BakeryOrder.Tests
       Assert.AreEqual(description, result);
     }
 
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      //Arrange
+      string Name = "Rick"
+      Vendor newVendor = new Vendore(name, "descrption");
+
+      //Act
+      int result = newVendor.Id;
+
+      //Asser
+      Assert.AreEqual(1, result);
+    }
+
   }
 }
