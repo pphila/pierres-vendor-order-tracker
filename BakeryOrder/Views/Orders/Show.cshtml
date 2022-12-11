@@ -3,10 +3,11 @@
 }
 
 <div class="container">
+  @using BakeryOrder.Models;
   <h1>Order Details:</h1>
 
-  <h2>Vendor: @Model["vendor"].Name</h2>
-  <h3>@Model["order"].Title</h3>
+  <h2>@Model["order"].Title</h2>
+  <h3>Vendor: @Model["vendor"].Name</h3>
   <h3>Order Date: @Model["order"].Date</h3>
   <h3>Order Total: $@Model["order"].Price</h3>
   <p>Order Notes: @Model["order"].Description</p>
