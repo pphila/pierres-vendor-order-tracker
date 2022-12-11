@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  @using BakeryOrder.Models;
+  <h1>Order Details:</h1>
+
+  <h2>@Model["order"].Title</h2>
+  <h3>Vendor: @Model["vendor"].Name</h3>
+  <h3>Order Date: @Model["order"].Date</h3>
+  <h3>Order Total: $@Model["order"].Price</h3>
+  <p>Order Notes: @Model["order"].Description</p>
+
+  <a href='/'>Home</a>
+  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another Order</a>
+  <a href='/vendors'>View all orders</a>
+</div>
