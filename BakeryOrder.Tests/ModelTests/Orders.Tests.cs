@@ -112,5 +112,25 @@ namespace BakeryOrder.Tests
       Assert.AreEqual(newOrder2, result);
     }
 
+    [TestMethod]
+    public void CalculatePrice_ReturnsTotalPriceOfOrder_Int()
+    {
+      //Arrange
+      string title = "Rick's Coffee and Beer";
+      string description = "morning delivery";
+      int bread = 6;
+      int pastry = 12;
+      int price = 40;
+      string date = "12/10/2022";
+      Order newOrder = new Order(title, description, bread, pastry, price, date);
+
+      //Act
+      newOrder.CalculatePrice();
+      int result = newOrder.Price;
+
+      //Assert
+      Assert.AreEqual(price, result);
+    }
+
   }
 }
