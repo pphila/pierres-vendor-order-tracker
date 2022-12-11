@@ -80,5 +80,43 @@ namespace BakeryOrder.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      //Arrange
+      string name1 = "Rick";
+      string name2 = "Morty";
+      Vendor newVendor1 = new Vendor(name1, "description");
+      Vendor newVendor2 = new Vendor(name2, "description2");
+
+      //Act
+      Vendor result = Vendor.Find(2);
+
+      //Assert
+      Assert.AreEqual(newVendor2, result);
+    }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      //Arrange
+      string title = "Rick's Cafe and Taproom";
+      string description = "baguettes and croissants";
+      int price = 20;
+      int bread = 5;
+      int pastry = 10;
+      string date = "12/10/2022";
+      Order newOrder = new Order(title, description, bread, pastry, price, date);
+      Vendor newVendor = new Vendor("Rick", "test discription");
+      List<Order> newList = new List<Order> { newOrder };
+      newVendor.AddOrder(newOrder);
+
+      //Act
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
